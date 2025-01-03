@@ -3,18 +3,11 @@
 import { useState } from "react"
 import Image from "next/image"
 import { HiOutlineDotsHorizontal } from "react-icons/hi"
-import { HiOutlineSearch } from "react-icons/hi"
 import Logo from "../../public/logo.png"
-import { FaCartShopping } from "react-icons/fa6"
 import { IoCartOutline } from "react-icons/io5"
 import { IoMdHeartEmpty } from "react-icons/io"
 import { IoIosSearch } from "react-icons/io"
-import { Abril_Fatface } from "next/font/google"
 
-const abril = Abril_Fatface({
-  weight: ["400"],
-  subsets: ["latin"]
-})
 
 const Header = () => {
   const [open, setOpen] = useState(false)

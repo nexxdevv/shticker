@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { Abril_Fatface } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
-import { FaCartShopping } from "react-icons/fa6"
 import { FaHeart } from "react-icons/fa6"
 
 import Header from "@/components/header/Header"
