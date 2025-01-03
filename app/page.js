@@ -1,5 +1,11 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import { Abril_Fatface } from "next/font/google"
 import Image from "next/image"
+import Link from "next/link"
+import { FaCartShopping } from "react-icons/fa6"
+import { FaHeart } from "react-icons/fa6"
 
 import Header from "@/components/header/Header"
 
@@ -8,70 +14,19 @@ const abril = Abril_Fatface({
   subsets: ["latin"]
 })
 
-const tShirtDesigns = [
-  {
-    id: "smw01",
-    name: "ADHD",
-    image: "/designs/adhd.png"
-  },
-  {
-    id: "smw02",
-    name: "Bourdain",
-    image: "/designs/bourdain.png"
-  },
-  {
-    id: "smw03",
-    name: "FedUp",
-    image: "/designs/fedup.png"
-  },
-  {
-    id: "smw04",
-    name: "Hail Sagan",
-    image: "/designs/hail_sagan.png"
-  },
-  {
-    id: "smw05",
-    name: "No Balance",
-    image: "/designs/no_balance.png"
-  },
-  {
-    id: "smw06",
-    name: "No Ragrets",
-    image: "/designs/no_ragrets.png"
-  },
-  {
-    id: "smw07",
-    name: "1976",
-    image: "/designs/1976.png"
-  },
-  {
-    id: "smw08",
-    name: "metallica",
-    image: "/designs/metallica.png"
-  },
-  {
-    id: "smw09",
-    name: "Nakatomi",
-    image: "/designs/nakatomi.png"
-  },
-  {
-    id: "smw10",
-    name: "Riot",
-    image: "/designs/riot.png"
-  },
-  {
-    id: "smw11",
-    name: "Stevie Nicks",
-    image: "/designs/stevie.png"
-  },
-  {
-    id: "smw12",
-    name: "VHS",
-    image: "/designs/vhs.png"
-  }
-]
-
 export default function Home() {
+  const [items, setItems] = useState([])
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch("/api/tees")
+      const data = await response.json()
+      setItems(data)
+    }
+
+    fetchData()
+  }, [])
+
   return (
     <>
       <Header />
@@ -80,23 +35,40 @@ export default function Home() {
           <h2
             className={`mb-12 text-3xl lg:text-5xl font-extrabold ${abril.className}`}
           >
-            Pop T-Shirts
+            Merch from the Church
           </h2>
           <div className="w-full">
             <ul className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 md:gap-x-10 w-full">
-              {tShirtDesigns.map((_, index) => (
+              {items.map((item) => (
                 <li
-                  key={index}
-                  className="shadow-xl rounded-2xl overflow-hidden w-full"
+                  key={item.id}
+                  className="rounded-lg shadow-sm hover:shadow-md transition-all"
                 >
-                  <Image
-                    width={0}
-                    height={0}
-                    sizes="100%"
-                    src={_.image}
-                    alt={_.name}
-                    className="w-full h-full object-contain"
-                  />
+                  <div className="flex flex-col items-center">
+                    <Link className="w-full" href={`/shop/tees/${item.id}`}>
+                      <Image
+                        src={`${item.image}`}
+                        width={0}
+                        height={0}
+                        sizes="100%"
+                        alt="Trendy Hipster Streetwear T-Shirt"
+                        className="w-full object-cover rounded-t-md mb-4"
+                      />
+                    </Link>
+
+                    <h3 className="text-lg font-semibold text-gray-800 w-full px-4">
+                      {item.name}
+                    </h3>
+
+                    <span className="text-xl font-bold text-gray-900 mt-4 flex items-start px-4 w-full">
+                      $29.99
+                    </span>
+                    <div className="flex mt-6 justify-between w-full px-4 mb-4">
+                      <button className="px-3 py-2 rounded-lg bg-gray-100 text-gray-700 shadow-md hover:bg-gray-200 focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2">
+                        <FaHeart color="red" />
+                      </button>
+                    </div>
+                  </div>
                 </li>
               ))}
             </ul>

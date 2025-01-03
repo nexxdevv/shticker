@@ -1,0 +1,62 @@
+[
+  {
+    "id": "smw-tee-01",
+    "name": "ADHD",
+    "image": "/designs/adhd.png"
+  },
+  {
+    "id": "smw-tee-02",
+    "name": "Bourdain",
+    "image": "/designs/bourdain.png"
+  },
+  {
+    "id": "smw-tee-03",
+    "name": "FedUp",
+    "image": "/designs/fedup.png"
+  },
+  {
+    "id": "smw-tee-04",
+    "name": "Hail Sagan",
+    "image": "/designs/hail_sagan.png"
+  },
+  {
+    "id": "smw-tee-05",
+    "name": "No Balance",
+    "image": "/designs/no_balance.png"
+  },
+  {
+    "id": "smw-tee-06",
+    "name": "No Ragrets",
+    "image": "/designs/no_ragrets.png"
+  },
+  {
+    "id": "smw-tee-07",
+    "name": "1976",
+    "image": "/designs/1976.png"
+  },
+  {
+    "id": "smw-tee-08",
+    "name": "metallica",
+    "image": "/designs/metallica.png"
+  },
+  {
+    "id": "smw-tee-09",
+    "name": "Nakatomi",
+    "image": "/designs/nakatomi.png"
+  },
+  {
+    "id": "smw-tee-10",
+    "name": "Riot",
+    "image": "/designs/riot.png"
+  },
+  {
+    "id": "smw-tee-11",
+    "name": "Stevie Nicks",
+    "image": "/designs/stevie.png"
+  },
+  {
+    "id": "smw-tee-12",
+    "name": "VHS",
+    "image": "/designs/vhs.png"
+  }
+]
