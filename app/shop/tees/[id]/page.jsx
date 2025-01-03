@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 export async function generateStaticParams() {
-  const response = await fetch("http://localhost:3000/api/tees")
+  const response = await fetch("/api/tees")
   const data = await response.json()
 
   return data.map((item) => ({ id: item.id.toString() }))
@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 export default async function TeesPage({ params }) {
   const { id } = params
 
-  const response = await fetch("http://localhost:3000/api/tees")
+  const response = await fetch("/api/tees")
   const data = await response.json()
 
   const item = data.find((item) => item.id === id)
