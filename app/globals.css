@@ -19,3 +19,13 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+h1 {
+  text-shadow: 10px 10px 0px #07bccc,
+    15px 15px 0px #e601c0,
+    20px 20px 0px #e9019a,
+    25px 25px 0px #f40468,
+    45px 45px 10px #482896;
+  letter-spacing: -1.5px;
+}
