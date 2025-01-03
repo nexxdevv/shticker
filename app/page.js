@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("/api/tees")
+      const response = await fetch("/api/shop/tees")
       const data = await response.json()
       setItems(data)
     }

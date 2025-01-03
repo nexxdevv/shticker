@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 export default async function TeesPage({ params }) {
   const { id } = params
 
-  const response = await fetch("/api/tees")
+  const response = await fetch("/api/shop/tees")
   const data = await response.json()
 
   const item = data.find((item) => item.id === id)
